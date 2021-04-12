@@ -1,12 +1,18 @@
 package com.mowitnow.model;
 
-import java.awt.*;
-
 public class Mower {
-    
-    private Point location;
+
+    private int x;
+    private int y;
     private Orientation orientation;
     private Lawn lawn;
+
+    public Mower(int x, int y, Orientation orientation, Lawn lawn) {
+        this.x = x;
+        this.y = y;
+        this.orientation = orientation;
+        this.lawn = lawn;
+    }
 
     public Lawn getLawn() {
         return lawn;
@@ -16,12 +22,20 @@ public class Mower {
         this.lawn = lawn;
     }
 
-    public Point getLocation() {
-        return location;
+    public int getX() {
+        return x;
     }
 
-    public void setLocation(Point location) {
-        this.location = location;
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     public Orientation getOrientation() {
@@ -32,4 +46,7 @@ public class Mower {
         this.orientation = orientation;
     }
 
+    public String getPosition() {
+        return x + " " + y + " " + orientation.getLabel();
+    }
 }
