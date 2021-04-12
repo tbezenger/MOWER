@@ -39,13 +39,4 @@ public class MowerServiceTest {
         Lawn lawn = new Lawn(4, 5);
         Mower mower = mowerService.initMower("4 4 T", lawn);
     }
-
-    @Test
-    public void executeInstructionsWithSomeInvalidInstructions_ShouldContinue() {
-        Lawn lawn = new Lawn(4, 5);
-        Mower expectedMower = new Mower(4, 4, Orientation.NORTH, lawn);
-        Mower mower = mowerService.initMower("4 4 N", lawn);
-        mowerService.executeInstructions(mower, "AAGAATAGAAQGADA");
-        assertEquals("2 2 S", mower.getPosition());
-    }
 }
